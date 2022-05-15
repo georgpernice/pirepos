@@ -4,9 +4,10 @@
 # Description : Drive SteppingMotor
 # Author      : www.freenove.com
 # modification: 2019/12/27
-#######################################################################
+########################################################################
 import RPi.GPIO as GPIO
-import time 
+import time
+import random
 
 motorPins = (7, 16, 11, 13, 15)    # define pins connected to four phase ABCD of stepper motor
 CCWStep = (0x01,0x02,0x04,0x08) # define power supply order for rotating anticlockwise 
@@ -41,9 +42,9 @@ def motorStop():
             
 def loop():
     while True:
-        moveSteps(1,3,512)  # rotating 360 deg clockwise, a total of 2048 steps in a circle, 512 cycles
-        time.sleep(0.5)
-        moveSteps(0,3,512)  # rotating 360 deg anticlockwise
+        moveSteps(1,3,512/10)  # rotating 360 deg clockwise, a total of 2048 steps in a circle, 512 cycles
+        #time.sleep(0.5)
+        moveSteps(0,3,512/20)  # rotating 360 deg anticlockwise
         time.sleep(0.5)
 
 def destroy():
