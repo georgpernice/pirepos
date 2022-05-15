@@ -4,7 +4,7 @@
 # Description : Drive SteppingMotor
 # Author      : www.freenove.com
 # modification: 2019/12/27
-########################################################################
+#######################################################################
 import RPi.GPIO as GPIO
 import time 
 
